@@ -1,0 +1,22 @@
+---
+import LangToggle from './LangToggle.astro';
+import { getText, localePath } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const t = getText(lang);
+const base = import.meta.env.BASE_URL;
+---
+<header class="site-header">
+  <nav class="nav-wrap" aria-label={lang === 'zh' ? '主导航' : 'Primary'}>
+    <a href={localePath(lang)} class="brand" aria-label={lang === 'zh' ? 'AppLane 首页' : 'AppLane home'}>
+      <img src={`${base}brand/icon-32.png`} alt="" width="32" height="32" />
+      <span>AppLane</span>
+    </a>
+    <div class="nav-links">
+      <a class="features-link" href={`${localePath(lang)}#features`}>{t('nav.features')}</a>
+      <a href={localePath(lang, 'support/')}>{t('nav.support')}</a>
+      <a href={localePath(lang, 'privacy/')}>{t('nav.privacy')}</a>
+      <LangToggle lang={lang} />
+    </div>
+  </nav>
+</header>

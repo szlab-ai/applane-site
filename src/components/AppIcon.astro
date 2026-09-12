@@ -1,0 +1,5 @@
+---
+const { class: className = '' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<img class={className} src={`${base}brand/applane.png`} alt="" width="160" height="160" loading="eager" fetchpriority="high" />

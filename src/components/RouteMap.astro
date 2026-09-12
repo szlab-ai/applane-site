@@ -1,0 +1,13 @@
+---
+import { getText } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang }; const t = getText(lang);
+---
+<section id="routing" class="section route-section">
+  <div class="section-heading"><p class="eyebrow">{t('route.kicker')}</p><h2>{t('route.heading')}</h2><p>{t('route.body')}</p></div>
+  <div class="route-map" aria-label={t('route.heading')}>
+    <div class="route-stage source"><span class="stage-label">01</span><strong>{t('route.apps')}</strong><div class="app-dots" aria-hidden="true"><i></i><i></i><i></i></div></div><span class="route-arrow" aria-hidden="true">→</span>
+    <div class="route-stage rules"><span class="stage-label">02</span><strong>{t('route.rules')}</strong><div class="rule-lines" aria-hidden="true"><i></i><i></i><i></i></div></div><span class="route-arrow" aria-hidden="true">→</span>
+    <div class="route-outcomes"><span>{t('route.direct')}</span><span>{t('route.proxy')}</span><span>{t('route.chain')}</span><span>{t('route.block')}</span></div>
+  </div>
+</section>

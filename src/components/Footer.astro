@@ -1,0 +1,19 @@
+---
+import LangToggle from './LangToggle.astro';
+import { getText, localePath } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const t = getText(lang);
+---
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-row">
+      <span>{t('footer.copyright')}</span>
+      <a href={localePath(lang, 'privacy/')}>{t('nav.privacy')}</a>
+      <a href={localePath(lang, 'support/')}>{t('nav.support')}</a>
+      <a href="mailto:szlab.ai@outlook.com">{t('footer.contact')}</a>
+      <LangToggle lang={lang} />
+    </div>
+    <p>{t('footer.opensource')}</p>
+  </div>
+</footer>

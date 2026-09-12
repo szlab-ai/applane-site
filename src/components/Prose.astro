@@ -1,0 +1,4 @@
+---
+const { title, eyebrow } = Astro.props;
+---
+<article class="prose-wrap">{eyebrow && <p class="eyebrow">{eyebrow}</p>}<h1>{title}</h1><div class="prose"><slot /></div></article>

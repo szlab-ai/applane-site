@@ -1,0 +1,12 @@
+---
+import { alternateLocalePath } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const toEn = alternateLocalePath(Astro.url.pathname, 'en');
+const toZh = alternateLocalePath(Astro.url.pathname, 'zh');
+---
+<div class="lang-toggle" aria-label={lang === 'zh' ? '选择语言' : 'Choose language'}>
+  <a href={toEn} lang="en" aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+  <span aria-hidden="true">/</span>
+  <a href={toZh} lang="zh-Hans" aria-current={lang === 'zh' ? 'page' : undefined}>中文</a>
+</div>

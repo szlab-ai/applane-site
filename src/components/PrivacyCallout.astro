@@ -1,0 +1,9 @@
+---
+import { getText, localePath } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang }; const t = getText(lang);
+---
+<section class="section split-callouts">
+  <article class="privacy-card"><p class="eyebrow">{t('privacy.kicker')}</p><h2>{t('privacy.heading')}</h2><p>{t('privacy.body')}</p><a href={localePath(lang, 'privacy/')}>{t('privacy.link')} <span aria-hidden="true">→</span></a></article>
+  <article class="limits-card"><h2>{t('limits.heading')}</h2><p>{t('limits.body')}</p><a href={localePath(lang, 'support/')}>{t('limits.link')} <span aria-hidden="true">→</span></a></article>
+</section>

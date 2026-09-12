@@ -1,0 +1,7 @@
+---
+import { getText } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang }; const t = getText(lang);
+const items = [{ number:'01', title:t('features.apps.title'), body:t('features.apps.body') },{ number:'02', title:t('features.rules.title'), body:t('features.rules.body') },{ number:'03', title:t('features.connections.title'), body:t('features.connections.body') }];
+---
+<section id="features" class="section capabilities"><h2>{t('features.heading')}</h2><div class="capability-grid">{items.map((item) => <article><span>{item.number}</span><h3>{item.title}</h3><p>{item.body}</p></article>)}</div></section>

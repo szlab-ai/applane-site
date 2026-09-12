@@ -1,0 +1,19 @@
+---
+import AppIcon from './AppIcon.astro';
+import { getText, localePath } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const t = getText(lang);
+---
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">{t('hero.eyebrow')}</p><AppIcon class="hero-icon" /><h1>{t('hero.title')}</h1>
+    <p class="hero-description">{t('hero.description')}</p>
+    <div class="hero-actions"><a class="button primary" href="#routing">{t('hero.primary')}</a><a class="button secondary" href={localePath(lang, 'privacy/')}>{t('hero.secondary')}</a></div>
+    <div class="release-note"><span>{t('hero.status')}</span><p>{t('hero.statusNote')}</p></div>
+  </div>
+  <div class="preview-frame" role="img" aria-label={t('hero.previewTitle')}>
+    <div class="preview-toolbar" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="preview-content"><div class="preview-lanes" aria-hidden="true"><b></b><b></b><b></b></div><div><strong>{t('hero.previewTitle')}</strong><p>{t('hero.previewCopy')}</p></div></div>
+  </div>
+</section>
