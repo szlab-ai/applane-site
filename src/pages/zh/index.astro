@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import Hero from '../../components/Hero.astro'; import RouteMap from '../../components/RouteMap.astro'; import Capabilities from '../../components/Capabilities.astro'; import PrivacyCallout from '../../components/PrivacyCallout.astro';
+const lang = 'zh';
+---
+<BaseLayout title="AppLane — macOS 应用级网络分流" description="为选中的 Mac 应用分别选择 SOCKS、HTTP CONNECT、代理链、系统网络或阻止规则，并看清每个连接的实际命中结果。" lang={lang} page="home"><Hero lang={lang}/><RouteMap lang={lang}/><Capabilities lang={lang}/><PrivacyCallout lang={lang}/></BaseLayout>

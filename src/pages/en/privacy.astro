@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import Prose from '../../components/Prose.astro';
+---
+<BaseLayout title="Privacy Policy — AppLane" description="How AppLane handles local configuration, proxy credentials, connection records, diagnostics, exports, and traffic sent through user-selected proxies." lang="en" page="privacy">
+  <Prose title="Privacy Policy" eyebrow="AppLane"><p class="meta">Last updated: September 13, 2026</p>
+    <h2>Overview</h2><p>AppLane is a macOS network-routing utility. It does not require an account and contains no advertising, analytics, tracking, telemetry, or developer-operated data collection service.</p>
+    <h2>Data stored on your Mac</h2><p>AppLane stores its configuration on your Mac. This can include selected applications, routing rules, proxy server addresses, and security-scoped file permissions used to identify applications. Proxy usernames and passwords are stored in the macOS Keychain with a device-only accessibility class.</p><p>While the Network Extension is running, it keeps up to 200 recent connection records in memory. A record can include an application's signing identifier, destination host and port, route, state, byte counts, start time, and an error description. AppLane does not send these records to the developer.</p>
+    <h2>Network traffic and diagnostics</h2><p>When routing is enabled, traffic matching your rules is sent through the proxy server or chain you selected. The proxy operator and destination service may process that traffic under their own privacy policies. Optional connection, website, and UDP checks contact the target you enter through the selected proxy. These operations provide the network function you request and do not send data to an AppLane service.</p>
+    <h2>Configuration export</h2><p>Exports happen only when you request them. An exported file excludes proxy usernames and passwords, credential references, local application paths, and file-access bookmarks. It can still contain application identifiers, routing rules, and proxy addresses, so review it before sharing.</p>
+    <h2>Retention and deletion</h2><p>You can remove applications, rules, proxies, chains, and profiles in AppLane. Credentials created in the current session are removed after they are no longer referenced by configuration or undo history. Older or unknown AppLane Keychain entries are not swept automatically. Search for <code>com.szlab.AppLane.proxy-credentials</code> in Keychain Access to remove remaining items. Removing AppLane itself may leave sandbox data and Keychain entries on your Mac; remove those items separately to erase all local AppLane data.</p>
+    <h2>Changes</h2><p>If this policy changes, the new version and date will appear on this page.</p>
+    <h2>Contact</h2><p>Questions about privacy: <a href="mailto:szlab.ai@outlook.com">szlab.ai@outlook.com</a>.</p>
+  </Prose>
+</BaseLayout>

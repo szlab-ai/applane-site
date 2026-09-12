@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import Hero from '../../components/Hero.astro'; import RouteMap from '../../components/RouteMap.astro'; import Capabilities from '../../components/Capabilities.astro'; import PrivacyCallout from '../../components/PrivacyCallout.astro';
+const lang = 'en';
+---
+<BaseLayout title="AppLane — Application routing for macOS" description="Route selected Mac apps through SOCKS, HTTP CONNECT, proxy chains, the system connection, or a block rule with clear per-connection results." lang={lang} page="home"><Hero lang={lang}/><RouteMap lang={lang}/><Capabilities lang={lang}/><PrivacyCallout lang={lang}/></BaseLayout>
