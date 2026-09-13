@@ -4,7 +4,7 @@ export function getText(lang: Lang) {
   return (key: TranslationKey): string => ui[lang][key] ?? ui[defaultLang][key];
 }
 
-export function localePath(lang: Lang, page: '' | 'privacy/' | 'support/' = '') {
+export function localePath(lang: Lang, page: '' | 'guide/' | 'privacy/' | 'support/' = '') {
   return `${import.meta.env.BASE_URL}${lang}/${page}`;
 }
 

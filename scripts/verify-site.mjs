@@ -7,6 +7,7 @@ const required = [
   'index.html', '404.html', 'en/index.html', 'zh/index.html',
   'en/privacy/index.html', 'zh/privacy/index.html',
   'en/support/index.html', 'zh/support/index.html',
+  'en/guide/index.html', 'zh/guide/index.html',
   'sitemap-index.xml', 'brand/applane.png', 'brand/favicon.ico',
 ];
 const errors = [];
@@ -55,4 +56,4 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log(`Verified ${htmlFiles.length} HTML pages, bilingual privacy/support routes, local assets, and script boundaries.`);
+console.log(`Verified ${htmlFiles.length} HTML pages, bilingual guide/privacy/support routes, local assets, and script boundaries.`);

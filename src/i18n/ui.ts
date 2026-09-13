@@ -2,7 +2,7 @@ export const defaultLang = 'en' as const;
 
 export const ui = {
   en: {
-    'nav.features': 'Features', 'nav.support': 'Support', 'nav.privacy': 'Privacy',
+    'nav.features': 'Features', 'nav.guide': 'Guide', 'nav.support': 'Support', 'nav.privacy': 'Privacy',
     'hero.eyebrow': 'Application routing for macOS', 'hero.title': 'Put every app on the right route.',
     'hero.description': 'Choose which Mac apps use a proxy, a proxy chain, the system route, or no connection at all—without turning your whole Mac into one network profile.',
     'hero.status': 'In development', 'hero.statusNote': 'Built for macOS 14 and later. App Store release is being prepared.',
@@ -23,7 +23,7 @@ export const ui = {
     'footer.opensource': 'Includes BaoLianDeng software under the MIT License.', 'footer.copyright': '© 2026 szlab', 'footer.contact': 'Contact',
   },
   zh: {
-    'nav.features': '功能', 'nav.support': '支持', 'nav.privacy': '隐私',
+    'nav.features': '功能', 'nav.guide': '使用指南', 'nav.support': '支持', 'nav.privacy': '隐私',
     'hero.eyebrow': 'macOS 应用级网络分流', 'hero.title': '让每个应用，走对自己的路。',
     'hero.description': '分别决定哪些 Mac 应用使用代理、代理链、系统网络或阻止连接，无需把整台 Mac 绑定到同一种网络模式。',
     'hero.status': '开发中', 'hero.statusNote': '面向 macOS 14 及以上版本，正在准备 App Store 发布。',

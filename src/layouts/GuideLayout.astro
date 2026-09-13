@@ -1,0 +1,20 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Prose from '../components/Prose.astro';
+import type { Lang } from '../i18n/ui';
+
+const { frontmatter } = Astro.props as {
+  frontmatter: {
+    title: string;
+    description: string;
+    heading: string;
+    eyebrow: string;
+    lang: Lang;
+  };
+};
+---
+<BaseLayout title={frontmatter.title} description={frontmatter.description} lang={frontmatter.lang} page="guide">
+  <Prose title={frontmatter.heading} eyebrow={frontmatter.eyebrow}>
+    <slot />
+  </Prose>
+</BaseLayout>
