@@ -38,6 +38,16 @@ for (const file of htmlFiles) {
   }
 }
 
+for (const [file, expectedLinks] of Object.entries({
+  'en/guide/index.html': ['/applane-site/en/guide/', '/applane-site/zh/guide/'],
+  'zh/guide/index.html': ['/applane-site/en/guide/', '/applane-site/zh/guide/'],
+})) {
+  const html = readFileSync(join(dist, file), 'utf8');
+  for (const href of expectedLinks) {
+    if (!html.includes(`href="${href}"`)) errors.push(`${file}: missing locale guide link ${href}`);
+  }
+}
+
 for (const directory of ['src', 'public']) {
   for (const file of filesUnder(join(root, directory))) {
     if (!['.astro', '.ts', '.css', '.txt', '.md'].includes(extname(file))) continue;

@@ -9,6 +9,8 @@ export function localePath(lang: Lang, page: '' | 'guide/' | 'privacy/' | 'suppo
 }
 
 export function alternateLocalePath(pathname: string, language: Lang) {
-  const localized = pathname.replace(/\/(en|zh)(\/|$)/, `/${language}$2`);
-  return localized === pathname ? `${import.meta.env.BASE_URL}${language}/` : localized;
+  const localeSegment = /\/(en|zh)(\/|$)/;
+  return localeSegment.test(pathname)
+    ? pathname.replace(localeSegment, `/${language}$2`)
+    : `${import.meta.env.BASE_URL}${language}/`;
 }
