@@ -71,6 +71,14 @@ for (const page of ['en/privacy/index.html', 'zh/privacy/index.html']) {
   if (existsSync(join(dist, page)) && !readFileSync(join(dist, page), 'utf8').includes('szlab.ai@outlook.com')) errors.push(`${page} has no support email`);
 }
 
+for (const page of ['en/privacy/index.html', 'zh/privacy/index.html']) {
+  if (!existsSync(join(dist, page))) continue;
+  const html = readFileSync(join(dist, page), 'utf8');
+  for (const disclosure of ['Cloudflare', 'Google', 'DNS-over-HTTPS']) {
+    if (!html.includes(disclosure)) errors.push(`${page} is missing proxy DNS disclosure: ${disclosure}`);
+  }
+}
+
 if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
