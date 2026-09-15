@@ -58,7 +58,7 @@ for (const directory of ['src', 'public']) {
   for (const file of filesUnder(join(root, directory))) {
     if (!['.astro', '.ts', '.css', '.txt', '.md'].includes(extname(file))) continue;
     const source = readFileSync(file, 'utf8');
-    for (const forbidden of ['Porthole', 'Telegram', 'CLOUDFLARE_WEB_ANALYTICS_TOKEN']) {
+    for (const forbidden of ['Porthole', 'Telegram', 'BaoLianDeng', 'CLOUDFLARE_WEB_ANALYTICS_TOKEN']) {
       if (source.includes(forbidden)) errors.push(`${relative(root, file)} contains ${forbidden}`);
     }
     for (const placeholder of ['In development', '开发中', 'release is being prepared', '准备 App Store 发布', 'screenshots are coming', '截图将在下一步加入', 'still in development']) {

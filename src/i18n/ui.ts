@@ -22,7 +22,7 @@ export const ui = {
     'privacy.link': 'Read the full privacy policy',
     'limits.heading': 'Current compatibility', 'limits.body': 'TCP routing is the primary path. UDP support is limited to a single SOCKS5 hop with fixed IP destinations. DNS offers Automatic, System DNS, and All Through Proxy modes. This version does not provide continuous disconnection protection.',
     'limits.link': 'View setup and support details',
-    'footer.opensource': 'Includes BaoLianDeng software under the MIT License.', 'footer.copyright': '© 2026 szlab', 'footer.contact': 'Contact',
+    'footer.copyright': '© 2026 szlab', 'footer.contact': 'Contact',
   },
   zh: {
     'nav.features': '功能', 'nav.guide': '使用指南', 'nav.support': '支持', 'nav.privacy': '隐私',
@@ -45,7 +45,7 @@ export const ui = {
     'privacy.link': '阅读完整隐私政策',
     'limits.heading': '当前兼容范围', 'limits.body': 'TCP 是当前主要分流路径。UDP 仅支持单个 SOCKS5 跳点和固定 IP 目标；DNS 提供“自动”“系统 DNS”和“全部通过代理”三种模式。本版本也不提供持续断网保护。',
     'limits.link': '查看设置与支持说明',
-    'footer.opensource': '包含 BaoLianDeng 的 MIT 许可软件。', 'footer.copyright': '© 2026 szlab', 'footer.contact': '联系',
+    'footer.copyright': '© 2026 szlab', 'footer.contact': '联系',
   },
 } as const;
 

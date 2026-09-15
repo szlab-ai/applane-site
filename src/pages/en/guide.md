@@ -197,7 +197,7 @@ After routing stops, new app connections return to the current macOS system path
 
 In Settings, **Use System Settings for Local Networks** keeps local network addresses on the system path. Loopback addresses and connections to the proxy server itself always keep their original path to prevent a routing loop.
 
-Settings also provides the current AppLane version, compatibility details, import and export controls, the privacy policy, support, and the BaoLianDeng MIT License notice.
+Settings also provides the current AppLane version, compatibility details, import and export controls, the privacy policy, and support.
 
 ## Current network compatibility
 
