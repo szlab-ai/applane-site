@@ -9,6 +9,12 @@ const required = [
   'en/support/index.html', 'zh/support/index.html',
   'en/guide/index.html', 'zh/guide/index.html',
   'sitemap-index.xml', 'brand/applane.png', 'brand/favicon.ico',
+  'screenshots/en/hero.webp', 'screenshots/zh/hero.webp',
+  'screenshots/en/01-route.webp', 'screenshots/en/02-proxies.webp',
+  'screenshots/en/03-rules.webp', 'screenshots/en/04-connections.webp',
+  'screenshots/en/05-setups.webp', 'screenshots/zh/01-route.webp',
+  'screenshots/zh/02-proxies.webp', 'screenshots/zh/03-rules.webp',
+  'screenshots/zh/04-connections.webp', 'screenshots/zh/05-setups.webp',
 ];
 const errors = [];
 for (const file of required) if (!existsSync(join(dist, file))) errors.push(`Missing ${file}`);
@@ -54,6 +60,9 @@ for (const directory of ['src', 'public']) {
     const source = readFileSync(file, 'utf8');
     for (const forbidden of ['Porthole', 'Telegram', 'CLOUDFLARE_WEB_ANALYTICS_TOKEN']) {
       if (source.includes(forbidden)) errors.push(`${relative(root, file)} contains ${forbidden}`);
+    }
+    for (const placeholder of ['In development', '开发中', 'release is being prepared', '准备 App Store 发布', 'screenshots are coming', '截图将在下一步加入', 'still in development']) {
+      if (source.includes(placeholder)) errors.push(`${relative(root, file)} contains release placeholder: ${placeholder}`);
     }
   }
 }

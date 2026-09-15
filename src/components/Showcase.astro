@@ -1,0 +1,38 @@
+---
+import { getText } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+
+const { lang } = Astro.props as { lang: Lang };
+const t = getText(lang);
+const base = import.meta.env.BASE_URL;
+const locale = lang === 'zh' ? 'zh' : 'en';
+const screenshots = lang === 'zh'
+  ? [
+      ['01-route.webp', '为每个应用选择通道'],
+      ['02-proxies.webp', '使用已有的代理服务'],
+      ['03-rules.webp', '按照目标和端口建立分流规则'],
+      ['04-connections.webp', '查看每条连接的实际通道'],
+      ['05-setups.webp', '切换为不同地点保存的配置'],
+    ]
+  : [
+      ['01-route.webp', 'Choose a route for each app'],
+      ['02-proxies.webp', 'Use your existing proxies'],
+      ['03-rules.webp', 'Add routing rules by destination and port'],
+      ['04-connections.webp', 'See the route used by each connection'],
+      ['05-setups.webp', 'Switch between saved setups'],
+    ];
+---
+<section class="section showcase" aria-labelledby="showcase-heading">
+  <div class="section-heading">
+    <p class="eyebrow">{t('showcase.kicker')}</p>
+    <h2 id="showcase-heading">{t('showcase.heading')}</h2>
+    <p>{t('showcase.body')}</p>
+  </div>
+  <div class="showcase-grid">
+    {screenshots.map(([file, alt], index) => (
+      <figure class:list={['showcase-shot', { featured: index === 0 }]}>
+        <img src={`${base}screenshots/${locale}/${file}`} alt={alt} width="1600" height="1000" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+      </figure>
+    ))}
+  </div>
+</section>

@@ -4,6 +4,8 @@ import { getText, localePath } from '../i18n/utils';
 import type { Lang } from '../i18n/ui';
 const { lang } = Astro.props as { lang: Lang };
 const t = getText(lang);
+const base = import.meta.env.BASE_URL;
+const screenshot = `${base}screenshots/${lang === 'zh' ? 'zh' : 'en'}/hero.webp`;
 ---
 <section class="hero">
   <div class="hero-copy">
@@ -12,8 +14,8 @@ const t = getText(lang);
     <div class="hero-actions"><a class="button primary" href="#routing">{t('hero.primary')}</a><a class="button secondary" href={localePath(lang, 'privacy/')}>{t('hero.secondary')}</a></div>
     <div class="release-note"><span>{t('hero.status')}</span><p>{t('hero.statusNote')}</p></div>
   </div>
-  <div class="preview-frame" role="img" aria-label={t('hero.previewTitle')}>
-    <div class="preview-toolbar" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="preview-content"><div class="preview-lanes" aria-hidden="true"><b></b><b></b><b></b></div><div><strong>{t('hero.previewTitle')}</strong><p>{t('hero.previewCopy')}</p></div></div>
-  </div>
+  <figure class="preview-frame">
+    <img class="hero-screenshot" src={screenshot} alt={t('hero.previewTitle')} width="1600" height="1067" fetchpriority="high" decoding="async" />
+    <figcaption><strong>{t('hero.previewTitle')}</strong><span>{t('hero.previewCopy')}</span></figcaption>
+  </figure>
 </section>

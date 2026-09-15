@@ -21,6 +21,6 @@ The Astro site builds to `dist/` and is configured for the `/applane-site/` GitH
 
 ## Deployment
 
-Pushes to `main` trigger the GitHub Pages workflow. Product screenshots are intentionally deferred until verified AppLane captures are supplied. The first release contains no analytics, cookies, advertising, or third-party runtime scripts.
+Pushes to `main` trigger the GitHub Pages workflow. The homepage uses verified AppLane screenshots for both supported languages. The first release contains no analytics, cookies, advertising, or third-party runtime scripts.
 
 Contact: **szlab.ai@outlook.com**
